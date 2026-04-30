@@ -3,8 +3,8 @@
 
 enum layers {
     BASE,  // default layer
-    UTIL,  // symbols
     GAME,  // gayming layer
+    UTIL,  // symbols
 };
 
 enum custom_keycodes {
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        |      |      |       |      |      |
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      |      |       |      |      |      |
- *                                 |LClick|DELETE|------|       |------|      |RClick|
+ *                                 |      |DELETE|------|       |------|LClick|RClick|
  *                                 |      |      |      |       |      |      |      |
  *                                 `--------------------'       `--------------------'
  */
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  
                                                 KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
                                                          KC_TRNS,     KC_TRNS,
-                                       MS_BTN1, KC_DEL,  KC_TRNS,     KC_TRNS, KC_TRNS, MS_BTN2
+                                       KC_TRNS, KC_DEL,  KC_TRNS,     KC_TRNS, MS_BTN1, MS_BTN2
  ),
 
 
