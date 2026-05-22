@@ -31,8 +31,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        |      |      |       |      |        |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
- *                                 | Space|Backsp|------|       |------| Enter  |Space |
- *                                 |      |ace   |      |       |      |        |      |
+ *                                 |Space/|Backsp|------|       |------| Enter  |Space |
+ *                                 |UTIL  |ace   |      |       |      |        |      |
  *                                 `--------------------'       `----------------------'
  */
 [BASE] = LAYOUT_ergodox_pretty(
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   MO(UTIL),        MO(NUM),     KC_TRNS,       KC_LALT, KC_LGUI,                                                       KC_RGUI, KC_TRNS, KC_TRNS,   KC_TRNS,     KC_TRNS,
                                                                  KC_TRNS, KC_TRNS,              KC_TRNS, KC_TRNS,
                                                                           KC_TRNS,              KC_TRNS,
-                                                         KC_SPC, KC_BSPC, KC_TRNS,              KC_TRNS, KC_ENT, KC_SPC
+                                                LT(UTIL,KC_SPC), KC_BSPC, KC_TRNS,              KC_TRNS, KC_ENT, KC_SPC
 ),
 /* Keymap 3: epic layer
  *
@@ -203,6 +203,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    }
 //    return true;
 //}
+
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case CTL_T(KC_ESC):
+            // Immediately select the hold action when another key is tapped.
+            return true;
+        default:
+            // Do not select the hold action when another key is tapped.
+            return false;
+    }
+}
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(UTIL,KC_SPC):
+            // Immediately select the hold action when another key is tapped.
+            return true;
+        default:
+            // Do not select the hold action when another key is tapped.
+            return false;
+    }
+}
 
 // Runs just one time when the keyboard initializes.
 void keyboard_post_init_user(void) {

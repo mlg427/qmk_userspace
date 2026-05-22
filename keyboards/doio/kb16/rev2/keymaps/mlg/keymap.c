@@ -38,30 +38,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*
        ┌───┬───┬───┬───┐   ┌───┐ ┌───┐
-       │ 1 │ 2 │ 3 │ 4 │   │Ply│ │TO1│
+       │   │   │   │LCK│   │   │ │   │
        ├───┼───┼───┼───┤   └───┘ └───┘
-       │ 5 │ 6 │ 7 │ 8 │
+       │   │   │   │   │
        ├───┼───┼───┼───┤
-       │ 9 │ 0 │ ↑ │Ent│      ┌───┐
-       ├───┼───┼───┼───┤      │Mut│
-       │Fn2│ ← │ ↓ │ → │      └───┘
-       └───┴───┴───┴───┘
-       ┌───┬───┬───┬───┐   ┌───┐ ┌───┐
-       │ ! │ @ │ # │ $ │   │   │ │   │
-       ├───┼───┼───┼───┤   └───┘ └───┘
-       │ % │ ^ │ & │ * │
-       ├───┼───┼───┼───┤
-       │ ( │ ) │   │   │      ┌───┐
+       │STM│DSC│   │   │      ┌───┐
        ├───┼───┼───┼───┤      │   │
-       │   │   │   │   │      └───┘
+       │TRM│WEB│   │   │      └───┘
        └───┴───┴───┴───┘
+
 */
     /*  Row:    0         1        2        3         4      */
     [_BASE] = LAYOUT(
-                KC_KP_7,  KC_KP_8, KC_KP_9, KC_KP_ENT,   KC_MPLY,
-                KC_KP_4,  KC_KP_5, KC_KP_6, KC_KP_ENT,   TO(_FN),
-                KC_KP_1,  KC_KP_2, KC_KP_3, KC_KP_ENT,   KC_MUTE,
-                KC_KP_0,  KC_LEFT, KC_DOWN, KC_RIGHT
+                KC_TRNS,  KC_TRNS, KC_TRNS, G(KC_L),   KC_TRNS,
+                KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,
+                KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,
+                KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS
             ),
 
 /*
