@@ -115,6 +115,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define DEBUG_MATRIX_SCAN_RATE
 
 
-#define TAPPING_TERM 100
+#define TAPPING_TERM 150
 #define PERMISSIVE_HOLD_PER_KEY
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
