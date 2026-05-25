@@ -17,34 +17,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   `    |   1  |   2  |   3  |   4  |   5  | PLAY |           |      |   6  |   7  |   8  |   9  |   0  |   -    |
+ * |   `    |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9  |   0  |   -    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  | NEXT |           |      |   Y  |   U  |   I  |   O  |   P  |   \    |
+ * | Tab    |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |  ;   |   '    |
- * |--------+------+------+------+------+------| PREV |           |      |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |  UTIL  |  Z   |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  /   |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | NUM  |      |      | LAlt |LSuper|                                       |RSuper|      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
- *                                        |      |      |       |      |        |
+ *                                        | PREV | NEXT |       | Home |  End   |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      |      |       |      |        |      |
+ *                                 |      |      |      |       | PgUp |        |      |
  *                                 |LShift|Backsp|------|       |------| Enter  |Space |
- *                                 |      |ace   |      |       |      |        |      |
+ *                                 |      |ace   | PLAY |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
 [BASE] = LAYOUT_ergodox_pretty(
 
-  KC_GRV,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_MPLY,              KC_TRNS,      KC_6,    KC_7,    KC_8,    KC_9,      KC_0,        KC_MINS,
-  KC_TAB,          KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    KC_MNXT,              KC_TRNS,      KC_Y,    KC_U,    KC_I,    KC_O,      KC_P,        KC_BSLS,
+  KC_GRV,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_TRNS,              KC_TRNS,      KC_6,    KC_7,    KC_8,    KC_9,      KC_0,        KC_MINS,
+  KC_TAB,          KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    KC_TRNS,              KC_TRNS,      KC_Y,    KC_U,    KC_I,    KC_O,      KC_P,        KC_BSLS,
   CTL_T(KC_ESC),   KC_A,        KC_S,          KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,      KC_SCLN,     KC_QUOT,
-  MO(UTIL),        KC_Z,        KC_X,          KC_C,    KC_V,    KC_B,    KC_MPRV,              KC_TRNS,      KC_N,    KC_M,    KC_COMM, KC_DOT,    KC_SLSH,     KC_TRNS,
+  MO(UTIL),        KC_Z,        KC_X,          KC_C,    KC_V,    KC_B,    KC_TRNS,              KC_TRNS,      KC_N,    KC_M,    KC_COMM, KC_DOT,    KC_SLSH,     KC_TRNS,
   MO(NUM),         KC_TRNS,     KC_TRNS,       KC_LALT, KC_LGUI,                                                       KC_RGUI, KC_TRNS, KC_TRNS,   KC_TRNS,     KC_TRNS,
-                                                                 KC_TRNS, KC_TRNS,              KC_TRNS, KC_TRNS,
-                                                                          KC_TRNS,              KC_TRNS,
-                                                        OS_LSFT, KC_BSPC, KC_TRNS,              KC_TRNS, KC_ENT, KC_SPC
+                                                                 KC_MPRV, KC_MNXT,              KC_HOME, KC_END,
+                                                                          KC_TRNS,              KC_PGUP,
+                                                        OS_LSFT, KC_BSPC, KC_MPLY,              KC_PGDN, KC_ENT, KC_SPC
 ),
 /* Keymap 3: epic layer
  *
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |      | GAME |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
+ *                                        |      |      |       | Back |Fwd   |
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      |      |       |      |      |      |
  *                                 |      |DELETE|------|       |------|LClick|RClick|
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, MS_LEFT, MS_DOWN, MS_UP,   MS_RGHT, KC_TRNS, KC_TRNS,
    KC_TRNS, TG(GAME),KC_TRNS, KC_TRNS, KC_TRNS,                                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
  
-                                                KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS,
+                                                KC_TRNS, KC_TRNS,     KC_WBAK, KC_WFWD,
                                                          KC_TRNS,     KC_TRNS,
                                        KC_TRNS, KC_DEL,  KC_TRNS,     KC_TRNS, MS_BTN1, MS_BTN2
  ),
