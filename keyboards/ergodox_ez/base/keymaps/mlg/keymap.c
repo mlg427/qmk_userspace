@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,---------------.
  *                                        | PREV | NEXT |       | Home |  End   |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      |      |       | PgUp |        |      |
+ *                                 |      |      |prtsc |       | PgUp |        |      |
  *                                 |LShift|Backsp|------|       |------| Enter  |Space |
  *                                 |      |ace   | PLAY |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   MO(UTIL),        KC_Z,        KC_X,          KC_C,    KC_V,    KC_B,    KC_TRNS,              KC_TRNS,      KC_N,    KC_M,    KC_COMM, KC_DOT,    KC_SLSH,     KC_TRNS,
   MO(NUM),         KC_TRNS,     KC_TRNS,       KC_LALT, KC_LGUI,                                                       KC_RGUI, KC_TRNS, KC_TRNS,   KC_TRNS,     KC_TRNS,
                                                                  KC_MPRV, KC_MNXT,              KC_HOME, KC_END,
-                                                                          KC_TRNS,              KC_PGUP,
+                                                                          KC_PSCR,              KC_PGUP,
                                                         OS_LSFT, KC_BSPC, KC_MPLY,              KC_PGDN, KC_ENT, KC_SPC
 ),
 /* Keymap 3: epic layer
