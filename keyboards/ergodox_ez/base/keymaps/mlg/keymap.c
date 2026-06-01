@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   MO(NUM),         KC_TRNS,     KC_TRNS,       KC_LALT, KC_LGUI,                                                       KC_RGUI, KC_TRNS, KC_TRNS,   KC_TRNS,     KC_TRNS,
                                                                  KC_MPRV, KC_MNXT,              KC_HOME, KC_END,
                                                                           KC_PSCR,              KC_PGUP,
-                                                        OS_LSFT, KC_BSPC, KC_MPLY,              KC_PGDN, KC_ENT, KC_SPC
+                                                        KC_LSFT, KC_BSPC, KC_MPLY,              KC_PGDN, KC_ENT, KC_SPC
 ),
 /* Keymap 3: epic layer
  *
