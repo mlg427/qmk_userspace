@@ -6,3 +6,4 @@
 #define ENCODER_A_PINS { GP4 }
 #define ENCODER_B_PINS { GP11 }
 
+#define OLED_DISPLAY_128X64 true

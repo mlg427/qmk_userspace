@@ -1,10 +1,8 @@
-// Copyright 2023 QMK
-// SPDX-License-Identifier: GPL-2.0-or-later
-
 #include QMK_KEYBOARD_H
 
 enum layers {
     BASE,  // default layer
+    UTIL,  // util layer
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -16,10 +14,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         KC_LALT, KC_LGUI, KC_LSFT, KC_BSPC, KC_ENT, KC_SPC,
 
-        KC_GRV,       KC_1, KC_2, KC_3, KC_4, KC_5,
-        KC_TAB,       KC_Q, KC_W, KC_E, KC_R, KC_T,
+        KC_GRV,        KC_1, KC_2, KC_3, KC_4, KC_5,
+        KC_TAB,        KC_Q, KC_W, KC_E, KC_R, KC_T,
         CTL_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G,
-        KC_TRNS,       KC_Z, KC_X, KC_C, KC_V, KC_B
+        MO(UTIL),      KC_Z, KC_X, KC_C, KC_V, KC_B
 
+    ),
+
+    [UTIL] = LAYOUT_mlg(
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     )
 };
+
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+    [BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [UTIL] = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) }
+};
+#endif
