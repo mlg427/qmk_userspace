@@ -193,6 +193,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+const uint16_t PROGMEM space_combo[] = {KC_LSFT, KC_BSPC, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(space_combo, KC_SPC),
+};
+
+
 //bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //    if (record->event.pressed) {
 //        switch (keycode) {
